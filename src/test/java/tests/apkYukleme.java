@@ -25,7 +25,7 @@ public class apkYukleme {
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
-        //capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Mert\\IdeaProjects\\Appium\\Apps\\Calculator_8.4 (503542421)_Apkpure.apk");
+        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Mert\\IdeaProjects\\Appium\\Apps\\arabam.com_4.8.2_Apkpure.apk");
 
         driver=new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -37,7 +37,7 @@ public class apkYukleme {
     @Test
 
     public void yukle(){
-        driver.activateApp("com.google.android.calculator");
+        //driver.activateApp("com.google.android.calculator");
 
     }
 
