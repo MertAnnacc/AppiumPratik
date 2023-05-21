@@ -81,6 +81,6 @@ public class KiwiTest {
 
         // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
         String fiyat = kiwiPage.priceTextLink.getText();
-        driver.sendSMS("+905304300317",fiyat + " En uygun fiyat bu şekildedir");
+        driver.sendSMS("666666666666",fiyat + " En uygun fiyat bu şekildedir");
     }
 }
