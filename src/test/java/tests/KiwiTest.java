@@ -1,12 +1,17 @@
 package tests;
 
 import Pages.KiwiPage;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.time.Duration;
 
 public class KiwiTest {
 
@@ -27,9 +32,12 @@ public class KiwiTest {
         // ardinda gelecek olan 3 adimada yesil butona basilarak devam edilir
         kiwiPage.continueButton.click();
         kiwiPage.continueButton.click();
+        Thread.sleep(1000);
         kiwiPage.exploreButton.click();
+        Thread.sleep(1000);
 
         // Trip type,one way olarak secilir
+        Thread.sleep(1000);
         kiwiPage.returnButton.click();
         kiwiPage.oneWayLink.click();
 
@@ -38,7 +46,7 @@ public class KiwiTest {
         kiwiPage.deleteDefaultCountryLink.click();
 
         // kalkis yapilacak ulke/sehir girilir ve sec e tiklanir
-        driver.getKeyboard().pressKey("dudullu");
+        driver.getKeyboard().pressKey("sabiha");
         kiwiPage.kalkisNoktasıLink.click();
         kiwiPage.chooseButton.click();
 
@@ -48,12 +56,31 @@ public class KiwiTest {
         kiwiPage.varisYeriLink.click();
         kiwiPage.chooseButton.click();
 
-        // gidis tarihi mayis ayinin 31 i olarak secilir ve set date e tiklanir
+        // gidis tarihi mayis ayinin 25 i olarak secilir ve set date e tiklanir
         kiwiPage.gidisTarihButton.click();
+        TouchAction action = new TouchAction<>(driver);
+        action.press(PointOption.point(534,1345))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(553,457)).release().perform();
+        Thread.sleep(1600);
+        action.press(PointOption.point(122,936)).release().perform();
+        kiwiPage.setDateButton.click();
 
         // search butonuna tiklanir
-        // en  ucuz ve aktarmasiz filtrelemeleri yapilir
-        // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
+        kiwiPage.searchButton.click();
+        Thread.sleep(3000);
 
+        // en  ucuz ve aktarmasiz filtrelemeleri yapilir
+        kiwiPage.popularButton.click();
+        kiwiPage.cheapestButton.click();
+        Thread.sleep(2000);
+
+        kiwiPage.stopsButton.click();
+        kiwiPage.nonstopLink.click();
+        Thread.sleep(1500);
+
+        // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
+        String fiyat = kiwiPage.priceTextLink.getText();
+        driver.sendSMS("+905304300317",fiyat + " En uygun fiyat bu şekildedir");
     }
 }

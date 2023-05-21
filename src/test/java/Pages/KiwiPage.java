@@ -43,7 +43,7 @@ public class KiwiPage {
     @FindBy(xpath = "//android.view.View[@content-desc=\"Clear All\"]")
     public WebElement deleteDefaultCountryLink;
 
-    @FindBy(xpath = "//*[@text='Istanbul - Dudullu']")
+    @FindBy(xpath = "//*[@text='SAW, Sabiha Gökçen International']")
     public WebElement kalkisNoktasıLink;
 
     @FindBy(xpath = "//*[@text='Choose']")
@@ -58,15 +58,26 @@ public class KiwiPage {
     @FindBy(xpath = "//*[@text='Departure:']")
     public WebElement gidisTarihButton;
 
+    @FindBy(xpath = "//*[@text='Set date']")
+    public WebElement setDateButton;
 
+    @FindBy(xpath = "(//*[@text='Search'])[1]")
+    public WebElement searchButton;
 
+    @FindBy(xpath = "//*[@text='Popular']")
+    public WebElement popularButton;
 
+    @FindBy(xpath = "//*[@text='Cheapest']")
+    public WebElement cheapestButton;
 
+    @FindBy(xpath = "//*[@text='Stops']")
+    public WebElement stopsButton;
 
+    @FindBy(xpath = "//*[@text='Nonstop']")
+    public WebElement nonstopLink;
 
-
-
-
+    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[2]")
+    public WebElement priceTextLink;
 
 
 
