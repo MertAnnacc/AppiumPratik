@@ -25,7 +25,7 @@ public class apkYukleme {
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
-        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Mert\\IdeaProjects\\Appium\\Apps\\Kiwi.com - Book Cheap Flights_2023.19.0_Apkpure.apk");
+        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Mert\\IdeaProjects\\Appium\\Apps\\all-currency-converter-3-9-0.apk");
 
         driver=new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
